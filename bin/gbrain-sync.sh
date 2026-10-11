@@ -1,9 +1,9 @@
 #!/bin/bash
-# OneBrain — vault -> gbrain incremental sync (PGLite-safe).
+# ABrain — vault -> gbrain incremental sync (PGLite-safe).
 # PGLite is single-writer: `gbrain serve` holds the lock, so we bounce serve around the sync.
 # Only bounces serve when the vault HEAD actually changed (most ticks are no-ops).
 set -uo pipefail
-source "$(dirname "$0")/onebrain-common.sh"
+source "$(dirname "$0")/abrain-common.sh"
 
 VAULT="$OBSIDIAN_VAULT_PATH"
 LOCKDIR="$GBRAIN_HOME/sync.lock.d"

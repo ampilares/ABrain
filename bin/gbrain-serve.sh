@@ -1,9 +1,9 @@
 #!/bin/bash
-# OneBrain — gbrain HTTP MCP serve wrapper.
+# ABrain — gbrain HTTP MCP serve wrapper.
 # Loopback-only (127.0.0.1:$GBRAIN_PORT), 100% offline embeddings (Ollama),
 # single source of truth for the admin token.
 set -euo pipefail
-source "$(dirname "$0")/onebrain-common.sh"
+source "$(dirname "$0")/abrain-common.sh"
 
 # Load ONLY the gbrain admin token from the secrets master — NOT the whole .env,
 # so OPENAI_API_KEY and friends never enter this process (keeps embeddings offline).

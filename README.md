@@ -1,15 +1,15 @@
-# OneBrain
+# ABrain
 
 **One Obsidian vault → one local brain → every AI agent sharing the same memory. 100% on-device, $0 API.**
 
-OneBrain is a thin, reproducible **setup layer** that puts all of your AI agents
+ABrain is a thin, reproducible **setup layer** that puts all of your AI agents
 (Claude Code, Codex, Grok, a self-hosted gateway/bot, Claude Desktop/Cowork) on a
 *single shared memory* served from your own machine over MCP. Edit a fact once in
 Obsidian and all of them see it.
 
 It is not a new database or model. The actual brain is **[gbrain](https://github.com/garrytan/gbrain)**.
 
-![OneBrain architecture: one Obsidian vault feeds gbrain, served over one local MCP endpoint to Claude, Codex, Grok, and a gateway](docs/architecture.png)
+![ABrain architecture: one Obsidian vault feeds gbrain, served over one local MCP endpoint to Claude, Codex, Grok, and a gateway](docs/architecture.png)
 
 ---
 
@@ -18,14 +18,14 @@ It is not a new database or model. The actual brain is **[gbrain](https://github
 > The entire intelligence layer here — the index, the knowledge graph, the synthesis,
 > and the ~80 MCP tools — is **[gbrain](https://github.com/garrytan/gbrain)**, the
 > open-source local-brain project by **[Garry Tan](https://github.com/garrytan)**.
-> OneBrain is just the operational wrapping around it: launchd services, a
+> ABrain is just the operational wrapping around it: launchd services, a
 > PGLite-safe sync loop, offline embeddings, secret hygiene, sandboxed enrichment,
 > multi-agent wiring, and the install scripts.
 >
 > **All credit for the hard part goes to Garry Tan and the gbrain project.** If you find
-> OneBrain useful, go star [github.com/garrytan/gbrain](https://github.com/garrytan/gbrain).
+> ABrain useful, go star [github.com/garrytan/gbrain](https://github.com/garrytan/gbrain).
 
-OneBrain pins a specific gbrain version for reproducibility (see [Prerequisites](#prerequisites)).
+ABrain pins a specific gbrain version for reproducibility (see [Prerequisites](#prerequisites)).
 gbrain is licensed under its own terms; this repo's MIT license covers only the wrapper
 scripts, LaunchAgents, installer, and docs in *this* repository.
 
@@ -71,7 +71,7 @@ and sub-agent fan-out are documented end to end in [`docs/orchestrator.md`](docs
 - **[OpenClaw](https://docs.openclaw.ai/)** — gateway + agent runtime, multi-agent routing.
 - **[Hermes (Nous Research)](https://hermes-agent.nousresearch.com/docs/)** — autonomous agent, built-in cron, spawns subagents.
 
-Each connects to OneBrain as a remote HTTP MCP server with one config block (exact syntax for
+Each connects to ABrain as a remote HTTP MCP server with one config block (exact syntax for
 both in the doc). You don't *need* one — any worker agent can orchestrate on-demand — but an
 orchestrator makes the loop persistent and scheduled.
 

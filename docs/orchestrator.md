@@ -1,6 +1,6 @@
 # Orchestration: putting an agent in charge
 
-OneBrain's brain is **passive** — it answers queries, stores facts, and serves the same
+ABrain's brain is **passive** — it answers queries, stores facts, and serves the same
 memory to every client. That's deliberate: you can put *any* agent in the **orchestrator**
 role on top of it without changing the brain at all.
 
@@ -22,7 +22,7 @@ plus the bearer token.
             reads context /       │             │   dispatches tasks /
             writes results        ▼             ▼   spawns subagents
                           ┌──────────────┐   Claude Code · Codex · Grok
-                          │   OneBrain   │   (worker agents, also brain clients)
+                          │    ABrain    │   (worker agents, also brain clients)
                           │  (gbrain MCP)│
                           └──────────────┘
                  results get written back to the vault →
@@ -39,7 +39,7 @@ sub-agent fan-out — exactly the two properties an orchestrator needs.
 [OpenClaw](https://docs.openclaw.ai/) is a gateway + agent runtime with multi-agent routing
 (isolated sessions per agent) and multi-channel messaging. MCP config hot-applies (no restart).
 
-Add OneBrain as a remote HTTP MCP server in your OpenClaw config:
+Add ABrain as a remote HTTP MCP server in your OpenClaw config:
 
 ```json5
 {
@@ -75,7 +75,7 @@ and writes outcomes back to the vault.
 that connects to any MCP server, has **built-in cron with delivery to any platform**, and can
 **spawn isolated subagents for parallel workstreams** — a natural always-on orchestrator.
 
-Add OneBrain under `mcp_servers` in Hermes's config:
+Add ABrain under `mcp_servers` in Hermes's config:
 
 ```yaml
 mcp_servers:

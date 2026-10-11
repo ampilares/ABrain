@@ -1,6 +1,6 @@
-# Wiring your AI clients to OneBrain
+# Wiring your AI clients to ABrain
 
-OneBrain exposes **one** HTTP MCP endpoint: `http://127.0.0.1:3131/mcp`, bearer-token
+ABrain exposes **one** HTTP MCP endpoint: `http://127.0.0.1:3131/mcp`, bearer-token
 authenticated with `GBRAIN_REMOTE_TOKEN`. Every client points at the same endpoint, so
 they all share one memory. Add as many clients as you like.
 

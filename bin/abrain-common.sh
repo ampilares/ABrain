@@ -1,5 +1,5 @@
 #!/bin/bash
-# OneBrain — shared config sourced by every wrapper.
+# ABrain — shared config sourced by every wrapper.
 # All machine-specific values come from env / ~/.secrets/.env, never hardcoded.
 
 # PATH: bun + homebrew + node + system. Adjust if your toolchain lives elsewhere.

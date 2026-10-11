@@ -1,6 +1,6 @@
 # Troubleshooting & hard-won lessons
 
-These are the things that actually bit during the build. If you replicate OneBrain,
+These are the things that actually bit during the build. If you replicate ABrain,
 you will probably hit some of them too.
 
 ## 1. PGLite is single-writer
@@ -36,11 +36,11 @@ never on any other service.
 
 ## 5. Embeddings are not chat models
 Don't embed with your big local generation model. A dedicated embedding model
-(`nomic-embed-text`, ~274 MB) is faster and better for retrieval. OneBrain actively
+(`nomic-embed-text`, ~274 MB) is faster and better for retrieval. ABrain actively
 `unset OPENAI_API_KEY` in every wrapper so nothing silently falls back to a paid API.
 
 ## 6. Sync that needs an app open is not headless sync
-OneBrain keeps the vault in sync across machines/devices with **Obsidian Sync**, which
+ABrain keeps the vault in sync across machines/devices with **Obsidian Sync**, which
 only propagates while the Obsidian app is running. If you move your vault off iCloud
 (recommended, to avoid iCloud-vs-Obsidian-Sync conflicts) and then close Obsidian on the
 machine that writes notes, nothing propagates even though files are landing on disk.

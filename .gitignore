@@ -1,4 +1,4 @@
-# OneBrain — never commit secrets, local state, or personal data
+# ABrain — never commit secrets, local state, or personal data
 .env
 .env.local
 *.local

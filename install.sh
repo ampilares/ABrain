@@ -1,5 +1,5 @@
 #!/bin/bash
-# OneBrain installer.
+# ABrain installer.
 # Copies wrapper scripts to ~/.gbrain/bin, installs LaunchAgents (with __HOME__ substituted),
 # and loads them. Idempotent: safe to re-run. Does NOT touch your secrets or your vault.
 #
@@ -13,7 +13,7 @@ BIN_DIR="$GBRAIN_HOME/bin"
 LAUNCH_DIR="$HOME/Library/LaunchAgents"
 UID_N="$(id -u)"
 
-echo "OneBrain installer"
+echo "ABrain installer"
 echo "  repo:        $REPO_DIR"
 echo "  scripts ->   $BIN_DIR"
 echo "  agents  ->   $LAUNCH_DIR"

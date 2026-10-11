@@ -5,7 +5,7 @@ gateway/bot. Each kept its *own* memory. The same facts about my world (people, 
 projects, preferences) lived in four-plus places, drifted apart, and there was no single
 place to ask. Agent amnesia, times four.
 
-OneBrain is the fix: **one source of truth + one brain layer + many clients.**
+ABrain is the fix: **one source of truth + one brain layer + many clients.**
 
 ## The decisions that mattered
 
@@ -13,7 +13,7 @@ OneBrain is the fix: **one source of truth + one brain layer + many clients.**
   has to survive. Everything else (the index, the embeddings, the graph) is rebuildable from
   it. That constraint kept the whole system reversible.
 - **The brain is [gbrain](https://github.com/garrytan/gbrain) by Garry Tan.** I did not build
-  an index or a knowledge graph — gbrain already does that, well, locally, over MCP. OneBrain
+  an index or a knowledge graph — gbrain already does that, well, locally, over MCP. ABrain
   is just the operational wrapping around it. All credit for the hard part goes to Garry Tan.
 - **100% offline.** Embeddings run on local Ollama (`nomic-embed-text`). The wrappers actively
   `unset OPENAI_API_KEY` so nothing silently falls back to a paid cloud API. $0 per query,

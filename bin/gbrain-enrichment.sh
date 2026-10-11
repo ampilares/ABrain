@@ -1,10 +1,10 @@
 #!/bin/bash
-# OneBrain enrichment — SANDBOXED, self-disabling, PGLite-safe.
+# ABrain enrichment — SANDBOXED, self-disabling, PGLite-safe.
 # Only ever touches $GBRAIN_HOME, the vault, and its OWN launchd label.
 # Never calls launchctl on any other service (learned the hard way: a self-restart
 # loop once took down a separate messaging gateway).
 set -uo pipefail
-source "$(dirname "$0")/onebrain-common.sh"
+source "$(dirname "$0")/abrain-common.sh"
 
 SENTINEL="$GBRAIN_HOME/ENRICHMENT_DISABLED"
 STARTS="$GBRAIN_HOME/enrichment-starts.log"
